@@ -1,5 +1,7 @@
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.5.16;
 
+//the migration contract for migrarting the smart contract to the blockchain network
 contract Migrations {
   address public owner;
   uint public last_completed_migration;

@@ -1,0 +1,109 @@
+{
+  "contractName": "FileShare",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/Jacky/Desktop/CS/projects/file-sharing-dapp/src/contracts/FileShare.sol\":\"FileShare\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Jacky/Desktop/CS/projects/file-sharing-dapp/src/contracts/FileShare.sol\":{\"keccak256\":\"0x423e07e1f8705021a47f4c06a593b2f4c20f613ad49de3d22f4a62ca517210e5\",\"urls\":[\"bzz-raw://59caa9ee577f2fc12e0e8f819495c100680912070201d03f4e78ac75c05f00f3\",\"dweb:/ipfs/QmUazyvq9MMwAy7etauebdcrm1pJYqkcBozw6zMm6KXds4\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220493675931864014598fd8e48ba5ed58bcd5c543b15a982ea63ac8a75a9655e5364736f6c63430007060033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220493675931864014598fd8e48ba5ed58bcd5c543b15a982ea63ac8a75a9655e5364736f6c63430007060033",
+  "immutableReferences": {},
+  "sourceMap": "29:25:0:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "29:25:0:-:0;;;;;",
+  "source": "pragma solidity >=0.5.16;\r\n\r\ncontract FileShare {\r\n\r\n}",
+  "sourcePath": "C:/Users/Jacky/Desktop/CS/projects/file-sharing-dapp/src/contracts/FileShare.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Jacky/Desktop/CS/projects/file-sharing-dapp/src/contracts/FileShare.sol",
+    "exportedSymbols": {
+      "FileShare": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:25:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "FileShare",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "29:25:0"
+      }
+    ],
+    "src": "0:54:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Jacky/Desktop/CS/projects/file-sharing-dapp/src/contracts/FileShare.sol",
+    "exportedSymbols": {
+      "FileShare": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:25:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "FileShare",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "29:25:0"
+      }
+    ],
+    "src": "0:54:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.3",
+  "updatedAt": "2022-01-25T13:56:56.232Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
