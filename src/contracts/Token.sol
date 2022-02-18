@@ -8,9 +8,10 @@ contract Token is ERC20 {
   //add minter variable
   address public minter;
 
-  //add minter changed event
+  //event for minter change
   event MinterChanged(address indexed from, address to);
 
+  //declare the name and symbol of our platform token
   constructor() public payable ERC20("FileShare Platform Token", "FILO") {
     //asign initial minter
     minter = msg.sender;
@@ -18,7 +19,7 @@ contract Token is ERC20 {
 
   //pass minter role to another address
   function passMinterRole(address addr) public returns (bool){
-    require(msg.sender == minter, 'Error, msg sender is not the minter');
+    require(msg.sender == minter, 'Error, msg sender do not have the minter role');
     minter = addr;
 
     emit MinterChanged(msg.sender, addr);
@@ -28,8 +29,8 @@ contract Token is ERC20 {
   //mint token to an account
   function mint(address account, uint256 amount) public {
     //check if msg.sender have minter role
-    require(msg.sender == minter, 'Error, msg sender is not the minter');
-	_mint(account, amount);
+    require(msg.sender == minter, 'Error, msg sender do not have the minter role');
+    _mint(account, amount);
   }
 
 }

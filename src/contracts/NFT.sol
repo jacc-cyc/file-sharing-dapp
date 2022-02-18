@@ -11,7 +11,20 @@ contract NFT is ERC721, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
-    constructor() public ERC721("FileShare Item NFT", "NFT") {}
+    //event for minter change
+    //event MinterChanged(address indexed from, address to);
+
+    //declare the name and symbol of our platform NFTs
+    constructor() public ERC721("FileShareNFT", "NFT") {}
+
+    //function for passing the minter role to another address
+    function passMinterRole(address addr) public onlyOwner returns (bool){
+        transferOwnership(addr);
+        //emit MinterChanged(msg.sender, addr);
+        //Ownable.transferOwnership() already emitted OwnershipTransferred event
+
+        return true;
+    }
 
     //mint NFT to an account with the item URI
     function mintNFT(address recipient, string memory tokenURI) public onlyOwner returns (uint256){
