@@ -20,7 +20,7 @@ function Footer() {
           <div class='social-icons'>
 
             <div class='social-icon-link facebook'>
-            <a target="_blank" href="https://github.com/jacc-cyc/file-sharing-dapp" className="source-code">Source Code</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/jacc-cyc/file-sharing-dapp" className="source-code">Source Code</a>
               <i class="fa-brands fa-github" />
             </div>
 

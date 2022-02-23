@@ -24,6 +24,11 @@ function Navbar() {
 
   window.addEventListener('resize', showButton);
 
+  //"Connect Wallet" button click event: connect user MetaMask wallet
+  const connectWallet = () => {
+    console.log('connect wallet')
+  }
+
   return (
     <>
       <nav className='navbar'>
@@ -74,7 +79,7 @@ function Navbar() {
             </li>
           </ul>
 
-          {button && <Button buttonStyle='btn--outline'>Connect Wallet</Button>}
+          {button && <Button buttonStyle='btn--outline' onClick={connectWallet}>Connect Wallet</Button>}
           
         </div>
       </nav>
