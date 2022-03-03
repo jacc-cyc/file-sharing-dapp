@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import '../../App.css';
-//import { Button } from '../Button/Button';
-import '../Button/Button.css';
-//import Button from '@material-ui/core/Button';
-import './HeroSection.css';
 import { Link } from 'react-router-dom';
+
+//CSS styles
+import '../../App.css';
+import '../Button/Button.css';
+import './HeroSection.css';
 
 
 function HeroSection() {
@@ -12,7 +12,7 @@ function HeroSection() {
   //file input ref
   let inputRef;
 
-  //state
+  //states
   const [fileUploaded, setFileUploaded] = useState(false)
 
   //"Upload" button click event: upload user's file to IPFS and mint as NFT
@@ -28,9 +28,9 @@ function HeroSection() {
     //Notes: remember to check if the event.target.file is 'undefined', maybe user click upload then 'X' the window
   }
 
-  //callback function, it will be called when fileUploaded value changed
+  //callback function when value changed
   useEffect(()=>{
-    console.log('fileUploaded: value changed', fileUploaded)
+    console.log('fileUploaded status: ', fileUploaded)
   }, [fileUploaded])
 
 
