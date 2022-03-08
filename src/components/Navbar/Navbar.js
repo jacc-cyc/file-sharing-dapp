@@ -194,7 +194,7 @@ function Navbar() {
           <DialogTitle id="alert-dialog-title" style={{ fontWeight: "bold", color: "black"}}>{"Connect your MetaMask Wallet?"}</DialogTitle>
 
           <DialogContent>
-            <DialogContentText id="alert-dialog-description" style={{ fontWeight: "bold", color: "black" }}>
+            <DialogContentText id="alert-dialog-description" style={{ fontWeight: "bold", color: "#43688B" }}>
               By connecting your MetaMask wallet, you can become an user of FileShare and enjoy the
                file-sharing services from our platform. 
             </DialogContentText>
@@ -219,10 +219,10 @@ function Navbar() {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
           >
-          <DialogTitle id="alert-dialog-title" className='dialog-title'>{"Your MetaMask wallet is connected successfully!"}</DialogTitle>
+          <DialogTitle id="alert-dialog-title">{"MetaMask wallet is connected successfully!"}</DialogTitle>
 
           <DialogContent>
-            <DialogContentText id="alert-dialog-description" style={{ fontWeight: "bold", color: "black" }}>
+            <DialogContentText id="alert-dialog-description" style={{ fontWeight: "bold", color: "#43688B" }}>
               {'Wallet address: ' + walletAddress}
             </DialogContentText>
           </DialogContent>
