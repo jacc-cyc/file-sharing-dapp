@@ -47,6 +47,7 @@ function Navbar() {
 
   //handle dialog actions
   const openDialog = () => {
+    closeMobileMenu()
     if(walletIsConnected){
       setOpen2(true)
     }else{
@@ -139,6 +140,7 @@ function Navbar() {
           </div>
 
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
@@ -164,24 +166,24 @@ function Navbar() {
             </li>
 
             <li>
-              <Link
-                to='/faq'
+              <div
                 className='nav-links-mobile'
-                onClick={closeMobileMenu}
+                onClick={openDialog}
               >
-                Connect Wallet
-              </Link>
+                { walletIsConnected ? trimmedWalletAddress : 'Connect Wallet'}
+              </div>
             </li>
+
           </ul>
 
           {/* Connect Wallet Button */}
 
-          <button 
+          {button && <button 
             className='btn btn--outline btn--medium'
             onClick={openDialog}
           >
             { walletIsConnected ? trimmedWalletAddress : 'Connect Wallet'}
-          </button>
+          </button>}
 
           {/* Connect Wallet Confrimation Box */}
           

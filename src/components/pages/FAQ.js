@@ -6,7 +6,9 @@ export default function FAQ() {
   return (
     <div>
       <div className='faq'>
+
       <h2>Frequently Asked Questions:</h2>
+      
       <h3>What is FileShare? Do I need to create an account for it?</h3>
       <p>FileShare is a decentralized file-sharing platform for everyone. We utilzed Ethereum Blockchain and IPFS to perform file-sharing
         in a secured and distributed way. You don't need to create/register an account in FileShare, all you need is a MetaMask wallet

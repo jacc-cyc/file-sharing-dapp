@@ -23,18 +23,77 @@
     margin-top: 55px;
     font-size: 35px;
     margin-bottom: 40px;
-    margin-left: 400px;
+    margin-left: 350px;
+    margin-right: 350px;
   }
   
   .faq > h3{
     color: rgb(24, 23, 23);
     font-size: 25px;
-    margin-left: 400px;
+    margin-left: 350px;
+    margin-right: 350px;
   }
   
   .faq > p{
     color: rgb(139, 138, 138);
     font-size: 20px;
-    margin: 5px 350px 40px 400px;
+    margin: 15px 350px 40px 350px;
+  }
+  
+  @media screen and (max-width: 1260px) {
+    .faq > h2 {
+      margin-left: 250px;
+      margin-right: 250px;
+      margin-top: 55px;
+    }
+  
+    .faq > h3 {
+      margin-left: 250px;
+      margin-right: 250px;
+    }
+  
+    .faq > p {
+      margin-left: 250px;
+      margin-right: 250px;
+      margin-top: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 960px) {
+    .faq > h2 {
+      margin-left: 150px;
+      margin-right: 150px;
+      margin-top: 55px;
+    }
+  
+    .faq > h3 {
+      margin-left: 150px;
+      margin-right: 150px;
+    }
+  
+    .faq > p {
+      margin-left: 150px;
+      margin-right: 150px;
+      margin-top: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 660px) {
+    .faq > h2 {
+      margin-left: 75px;
+      margin-right: 75px;
+      margin-top: 55px;
+    }
+  
+    .faq > h3 {
+      margin-left: 75px;
+      margin-right: 75px;
+    }
+  
+    .faq > p {
+      margin-left: 75px;
+      margin-right: 75px;
+      margin-top: 20px;
+    }
   }
   
