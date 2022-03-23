@@ -13,6 +13,7 @@ contract NFT is ERC721, Ownable {
 
     //event for minter change
     //event MinterChanged(address indexed from, address to);
+    event nftApproval(address indexed from, address indexed to, uint256 id);
 
     //declare the name and symbol of our platform NFTs
     constructor() public ERC721("FileShareNFT", "NFT") {}
@@ -35,5 +36,11 @@ contract NFT is ERC721, Ownable {
         _setTokenURI(newItemId, tokenURI);
 
         return newItemId;
+    }
+
+    //set up approval for FileShare platform to transfer a specific NFT
+    function setPlatformApproval(address to, uint256 tokenId) public{
+        approve(to, tokenId);
+        emit nftApproval(msg.sender, to, tokenId);
     }
 }

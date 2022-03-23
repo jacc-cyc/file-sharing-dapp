@@ -326,7 +326,7 @@ function HeroSection() {
           <DialogTitle id="alert-dialog-title">{"Action Rejected!"}</DialogTitle>
 
           <DialogContent>
-            <DialogContentText id="alert-dialog-description" style={{ fontWeight: "bold", color: "#BF9D1F", fontSize: "18px" }}>
+            <DialogContentText id="alert-dialog-description" style={{ fontWeight: "", color: "#BF9D1F", fontSize: "18px" }}>
               {"Please connect your MetaMask Wallet to our platform before minting a NFT. Thanks."}
             </DialogContentText>
           </DialogContent>
