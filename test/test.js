@@ -127,7 +127,7 @@ contract('FileShare Platform', ([deployer, user]) => {
           expect(await fs.checkOwner(nftid)).to.eq(user)
         })
 
-        it('checking of NFT direct transferral inside Token.sol', async () => {
+        it('checking of NFT direct transferral inside NFT.sol', async () => {
           await nft.transferFrom(user, ac, nftid, {from: user})
           expect(await fs.checkOwner(nftid)).to.eq(ac)
         })
