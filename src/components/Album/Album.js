@@ -55,8 +55,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//id, nftId, name, shortDescription, longDescription, fileURI, ownerAddress
-const fileItems2 = [
+
+/* const fileItems2 = [
   { id: 1, name: 'Sample 01', ownerAddress: '0x9F04164571FF66d4196bA791eD371fb9a8ba94Cb', 
   shortDescription: 'bla bla bla bla bla bla bla bla bla bla bla bla', longDescription: 'bla bla bla bla bla bla bla bla bla bla bla bla 1' },
 
@@ -74,7 +74,7 @@ const fileItems2 = [
 
   { id: 6, name: 'Sample 06', ownerAddress: '0x1234', 
   shortDescription: 'bla bla bla bla bla bla bla bla bla bla bla bla', longDescription: 'longDescription 6' },
-]
+] */
 
 
 export default function Album() {
@@ -154,19 +154,7 @@ export default function Album() {
     setOpen6(false)
   }
 
-  /* const addItem = () =>{
-    console.log("share to public")
-    let items = fileItems
-    console.log(items)
-
-    const id = 7
-    const item = { id: id, name: 'Sample 07', ownerAddress: '0x1234', 
-    shortDescription: 'bla bla bla bla bla bla bla bla bla bla bla bla', longDescription: 'longDescription 6' }
-
-    items.push(item)
-    setFileItems(items)
-  } */
-
+  //"Share to Public" button, adding new file item to the blockchain
   const addItem = async () =>{
     closeDialog3()
     
@@ -196,7 +184,7 @@ export default function Album() {
     window.location.reload();
   }
 
-  //transfer the file NFT after to new owner from sharer
+  //transfer the file NFT to new owner from sharer
   const transferFile = async () =>{
     console.log(walletAddress)
     console.log(ownerAddress)
@@ -239,7 +227,7 @@ export default function Album() {
     setOpen(true)
   }
 
-  //"get" button
+  //"get" button, retrieve file data item info
   const getButton = (id) => {
     //console.log('get button')
     for(let i=0;i<fileItems.length;i++){
