@@ -53,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
+  itemID: {
+    fontWeight: "normal",
+  },
 }));
 
 
@@ -97,6 +100,8 @@ export default function Album() {
   const [ownerAddress, setOwnerAddress] = useState('undefined')
   const [longDescription, setLongDescription] = useState('undefined')
   const [fileName, setFileName] = useState('undefined')
+  const [fileURI, setFileURI] = useState('undefined')
+  const [fileType, setFileType] = useState('undefined')
   const [fileId, setFileId] = useState('0')
   const [nftId, setNftId] = useState('0')
 
@@ -115,6 +120,7 @@ export default function Album() {
   const [open4, setOpen4] = useState(false)
   const [open5, setOpen5] = useState(false)
   const [open6, setOpen6] = useState(false)
+  const [open7, setOpen7] = useState(false)
 
   //Dialog actions
   const openDialog = () =>{
@@ -152,6 +158,12 @@ export default function Album() {
 
   const closeDialog6 = () =>{
     setOpen6(false)
+  }
+
+  const closeDialog7 = () =>{
+    setOpen7(false)
+    //refresh the page, to reload the data from blockchain
+    window.location.reload();
   }
 
   //"Share to Public" button, adding new file item to the blockchain
@@ -207,8 +219,9 @@ export default function Album() {
       })
 
       closeDialog4()
+      setOpen7(true)
       //refresh the page, to reload the data from blockchain
-      window.location.reload();
+      //window.location.reload();
     }
   }
 
@@ -221,6 +234,10 @@ export default function Album() {
         setOwnerAddress(fileItems[i].ownerAddress)
         setLongDescription(fileItems[i].longDescription)
         setFileName(fileItems[i].name)
+        setFileURI(fileItems[i].fileURI)
+        setFileId(fileItems[i].id)
+        setFileType(fileItems[i].fileType)
+        setNftId(fileItems[i].nftId)
         break
       }
     }
@@ -235,7 +252,9 @@ export default function Album() {
         //console.log(id, fileItems[i].longDescription, fileItems[i].ownerAddress)
         setOwnerAddress(fileItems[i].ownerAddress)
         setFileName(fileItems[i].name)
+        setFileURI(fileItems[i].fileURI)
         setFileId(fileItems[i].id)
+        setFileType(fileItems[i].fileType)
         setNftId(fileItems[i].nftId)
         break
       }
@@ -281,7 +300,6 @@ export default function Album() {
       //console.log(items.length)
       let len = items.length
       while(len--){
-        console.log(items[len].ownerAddress)
         if(items[len].ownerAddress === '' || items[len].id === 0){
           items.splice(len,1)
         }
@@ -348,7 +366,7 @@ export default function Album() {
                       {item.name}
                     </Typography>
                     <Typography>
-                      {item.shortDescription}
+                      {item.shortDescription === '' ? 'No Description' : item.shortDescription}
                     </Typography>
                   </CardContent>
 
@@ -377,9 +395,18 @@ export default function Album() {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
           >
-          <DialogTitle id="alert-dialog-title">{"More Details of '" + fileName + "'"}</DialogTitle>
+          <DialogTitle id="alert-dialog-title"><i>{"FileShareNFT#" + nftId}</i> &nbsp; {"'" + fileName + "'"}</DialogTitle>
 
           <DialogContent>
+            <DialogContentText id="alert-dialog-description" style={{ fontWeight: "bold" }}>
+              Item ID: <span className={classes.itemID}>{fileId}</span>
+            </DialogContentText>
+            <DialogContentText id="alert-dialog-description" style={{ fontWeight: "bold" }}>
+              {'File URI: '}
+            </DialogContentText>
+            <DialogContentText id="alert-dialog-description" style={{ wordWrap: "break-word", fontWeight: "", color: "#43688B" }}>
+              {fileURI}
+            </DialogContentText>
             <DialogContentText id="alert-dialog-description" style={{ fontWeight: "bold" }}>
               {'Owner address: '}
             </DialogContentText>
@@ -389,8 +416,8 @@ export default function Album() {
             <DialogContentText id="alert-dialog-description" style={{ fontWeight: "bold" }}>
               {'Description: '}
             </DialogContentText>
-            <DialogContentText id="alert-dialog-description" style={{ fontWeight: "", color: "#43688B" }}>
-              {longDescription}
+            <DialogContentText id="alert-dialog-description" style={{ wordWrap: "break-word", fontWeight: "", color: "#43688B" }}>
+              {longDescription === '' ? 'The sharer did not say anything about this file.' : longDescription}
             </DialogContentText>
           </DialogContent>
 
@@ -559,7 +586,7 @@ export default function Album() {
 
         {/* "You are the owner" Information Box*/}
         
-      <Dialog
+         <Dialog
             open={open6}
             onClose={closeDialog6}
             aria-labelledby="alert-dialog-title"
@@ -567,12 +594,38 @@ export default function Album() {
           >
           <DialogContent>
             <DialogContentText id="alert-dialog-description" style={{ fontWeight: "", color: "#BF9D1F", fontSize: "18px" }}>
-              Oops!! You are already the original owner (sharer) of this <i>FileShareNFT</i>.
+              Oops!! You are already the original owner (sharer) of <i>FileShareNFT#{nftId}</i>.
             </DialogContentText>
           </DialogContent>
 
           <DialogActions>
             <Button onClick={closeDialog6} color="primary" autoFocus>
+              OK
+            </Button>
+          </DialogActions>
+
+        </Dialog>
+
+        {/* "You are the owner" Information Box*/}
+        
+        <Dialog
+            open={open7}
+            onClose={closeDialog7}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+          <DialogContent>
+          <DialogContentText id="alert-dialog-description" style={{ fontSize: "18px", fontWeight: "bold", color: "black" }}>
+              Congrat! You are now the unique owner of <i>FileShareNFT#{nftId}</i>.
+            </DialogContentText>
+
+            <DialogContentText id="alert-dialog-description" style={{ wordWrap: "break-word", color: "#43688B", fontSize: "18px" }}>
+              {fileURI}
+            </DialogContentText>
+          </DialogContent>
+
+          <DialogActions>
+            <Button onClick={closeDialog7} color="primary" autoFocus>
               OK
             </Button>
           </DialogActions>
