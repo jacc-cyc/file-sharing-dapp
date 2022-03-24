@@ -606,7 +606,7 @@ export default function Album() {
 
         </Dialog>
 
-        {/* "You are the owner" Information Box*/}
+        {/* "Congrat for getting the file NFT" Information Box*/}
         
         <Dialog
             open={open7}
