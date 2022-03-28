@@ -48,6 +48,7 @@ function HeroSection() {
   const [uploadedToIPFS, setUploadedToIPFS] = useState(false)
   const [ipfsURI, setIpfsURI] = useState('undefined')
   const [mintedAsNFT, setMintedAsNFT] = useState(false)
+  const [nftID, setNftID] = useState('undefined')
 
   const [open, setOpen] = useState(false)
   const [open2, setOpen2] = useState(false)
@@ -157,11 +158,12 @@ function HeroSection() {
       console.log('FILO token balance: ', web3.utils.fromWei(tokenBal))
       console.log('ETH balance: ', web3.utils.fromWei(ethBal))
 
-      //NFT minting
+      //NFT minting, get the NFT id after minted
       await fileShare.methods.mintNFT(walletAddress, ipfsURI).send({
         from: walletAddress
       })
-
+      const id = await fileShare.methods.getNFTId().call()
+      setNftID(id)
 
       setMintedAsNFT(true)
     }else{
@@ -296,7 +298,7 @@ function HeroSection() {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
           >
-          <DialogTitle id="alert-dialog-title">{"Congrat! Your file is minted as a FileShareNFT to your wallet address!"}</DialogTitle>
+          <DialogTitle id="alert-dialog-title">Congrat! Your file is minted as a <i>FileShareNFT#{nftID}</i> to your wallet address!</DialogTitle>
 
           <DialogContent>
             <DialogContentText id="alert-dialog-description" style={{ fontWeight: "bold", color: "#43688B" }}>
