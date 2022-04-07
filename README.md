@@ -15,6 +15,7 @@ It offers two ways of file-sharing:
 ## Tech Stack
 Frontend:
 - **React / Redux**
+- **Material UI**
 - **Web3.js**
 - [**IPFS HTTP API**](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client#readme)
 - [**MetaMask Ethereum Provider API**](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-provider-api)
