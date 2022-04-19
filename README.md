@@ -7,6 +7,7 @@ FileShare is a decentralized file-sharing platform based on blockchain technolog
 - **Provide a file-sharing platform without middle-man involved**
 - **Improve data privacy and security with blockchain and InterPlanetary File System (IPFS)**
 - **Ensure user file ownership with Non-Fungible Token (NFT)**
+- **Reward user who are willing to share their file publicly with our platform token "FILO"**
 
 It offers two ways of file-sharing:
 - **Personal Sharing**: Share your unique IPFS file link to someone
